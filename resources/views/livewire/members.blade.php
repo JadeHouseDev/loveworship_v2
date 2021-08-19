@@ -1,5 +1,4 @@
 <div>
-
     <div class="row">
         <div class="col-lg-12">
             <div class="">
@@ -31,22 +30,22 @@
                                         <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>Entity ID</th>
                                                 <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Contact</th>
-                                                <th>Started</th>
+                                                <th>Phone Number</th>
+                                                <th>Branch</th>
+                                                <th>Area of Residence</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @if ($members ?? "")
+                                            @foreach ($members as $user)
                                             <tr>
                                                 <td></td>
-                                                <td>ENT_000000082</td>
-                                                <td>mNoTIFY</td>
-                                                <td>info@mnotify.com</td>
-                                                <td>233247878234</td>
-                                                <td>2011/04/25</td>
+                                                <td>{{ $user->fname }} {{ $user->lname }}</td>
+                                                <td>{{ $user->phone }}</td>
+                                                <td>{{ $user->branch }}</td>
+                                                <td>{{ $user->area_of_residence }}</td>
                                                 <td>
                                                     <a href="./entity_page.html"
                                                         class="btn btn-first pl-2 pr-2 btn-sm ml-1 mr-1"
@@ -55,6 +54,8 @@
                                                     </a>
                                                 </td>
                                             </tr>
+                                            @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                 </div>

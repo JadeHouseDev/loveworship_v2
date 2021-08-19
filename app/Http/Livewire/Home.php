@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Home extends Component
@@ -16,6 +17,15 @@ class Home extends Component
             't' => 'Movie 2'
         ],
     ];
+
+    public $users = [];
+
+    public function mount()
+    {
+        $this->users = User::all();
+        // dd($this->users);
+    }
+
 
     public function add()
     {

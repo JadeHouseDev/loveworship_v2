@@ -11,5 +11,8 @@
         @endforeach
     </span>
 
-    @livewire('members')
+    {{-- {{ $users }} --}}
+
+    {{-- @livewire('members', ['users'=>$users]) --}}
+    <livewire:members />
 </div>
