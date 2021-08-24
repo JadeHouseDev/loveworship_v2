@@ -28,6 +28,14 @@
                                 </a>
                             </li>
                             <li class="">
+                                <a class="pl-0 mb-2" href="{{ route('branches') }}">
+                                    <span>
+                                        <i data-feather="activity"></i>
+                                        <span>Branches</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="">
                                 <a class="pl-0 mb-2" href="#">
                                     <span>
                                         <i data-feather="activity"></i>

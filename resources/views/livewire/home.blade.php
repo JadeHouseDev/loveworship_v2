@@ -1,6 +1,6 @@
 <div>
-    <div>
-        <input type="text" wire:model="name" /> <br>
+    {{-- <div>
+        <input type="text" wire:model="name" class="form-control" />
         <button wire:click='add'>Add</button>
     </div>
 
@@ -8,11 +8,8 @@
     <span>
         @foreach ($titles as $title)
         <li>{{ $title['t'] }}</li>
-        @endforeach
-    </span>
+    @endforeach
+    </span> --}}
 
-    {{-- {{ $users }} --}}
-
-    {{-- @livewire('members', ['users'=>$users]) --}}
     <livewire:members />
 </div>

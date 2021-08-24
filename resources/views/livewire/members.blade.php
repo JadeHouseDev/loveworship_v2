@@ -1,6 +1,13 @@
 <div>
     <div class="row">
         <div class="col-lg-12">
+
+            {{-- add member form area --}}
+            @if ($form == 1)
+            @livewire('addmember')
+            @else
+            @endif
+
             <div class="">
                 <div class="card card-box mb-5">
                     <div class="card-header">
@@ -19,9 +26,7 @@
                                 <div class="card card-box mb-5 table-responsive">
                                     <div class="card-header">
                                         <div class="card-header--actions">
-                                            <button
-                                                onclick="document.getElementById('add_new_member').style.display='block'"
-                                                class="btn btn-sm btn-primary">
+                                            <button wire:click="toggle_form" class="btn btn-sm btn-primary">
                                                 <i class="fas fa-plus"></i> Add New Member
                                             </button>
                                         </div>
@@ -44,12 +49,11 @@
                                                 <td></td>
                                                 <td>{{ $user->fname }} {{ $user->lname }}</td>
                                                 <td>{{ $user->phone }}</td>
-                                                <td>{{ $user->branch }}</td>
+                                                <td>{{ $user->branch->branch_name ?? ""}}</td>
                                                 <td>{{ $user->area_of_residence }}</td>
                                                 <td>
-                                                    <a href="./entity_page.html"
-                                                        class="btn btn-first pl-2 pr-2 btn-sm ml-1 mr-1"
-                                                        title="View details">
+                                                    <a href="{{ route('view_member', $user->id) }}"
+                                                        class="btn btn-first pl-2 pr-2 btn-sm ml-1 mr-1" title="View">
                                                         <i class="fas fa-binoculars"></i>
                                                     </a>
                                                 </td>
@@ -78,45 +82,45 @@
                         <h3>Add New Member</h3>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form wire:submit.prevent='addMember'>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        {{-- {{ $fname }} --}}
                                         <label for="fname">First Name: </label>
-                                        <input v-model="user.fname" type="text" name="fname"
-                                            placeholder="Enter First Name" id="fname" class="form-control" required>
+                                        <input wire:model="fname" type="text" placeholder="Enter First Name"
+                                            class="form-control">
                                     </div>
                                     <div class="form-group">
+                                        {{-- {{ $lname }} --}}
                                         <label for="lname">Last Name: </label>
-                                        <input v-model="user.lname" type="text" name="lname"
-                                            placeholder="Enter Last Name" id="lname" class="form-control" required>
+                                        <input wire:model="lname" type="text" placeholder="Enter Last Name"
+                                            class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label for="dob">Date of Birth: </label>
-                                        <input v-model="user.dob" type="date" name="dob"
-                                            placeholder="Enter Date of Birth" id="dob" class="form-control">
+                                        <input wire:model="dob" type="date" placeholder="Enter Date of Birth"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="branch">Branch: </label>
-                                        <select v-model="user.branch" name="branch" id="branch" class="form-control"
-                                            required>
+                                        <select wire:model="branch" class="form-control">
                                             <option value="">Select Branch</option>
-                                            <option v-for="(branch, index) in branches" :key="index" :value="branch.id">
-                                            </option>
+                                            <option value="1">Madina</option>
+
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="phone">Phone Number: </label>
-                                        <input v-model="user.phone" type="text" name="lname"
-                                            placeholder="Enter Phone Number" id="lname" class="form-control">
+                                        <input wire:model="phone" type="text" placeholder="Enter Phone Number"
+                                            class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label for="area_of_residence">Area of Residence: </label>
-                                        <input v-model="user.area_of_residence" type="text" name="area_of_residence"
-                                            placeholder="Enter Area of Residence" id="area_of_residence"
-                                            class="form-control">
+                                        <input wire-model="area_of_residence" type="text"
+                                            placeholder="Enter Area of Residence" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-12">

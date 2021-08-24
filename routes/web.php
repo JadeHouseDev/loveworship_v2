@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Livewire\Branch\ViewBranch;
+use App\Http\Livewire\Branches;
 use App\Http\Livewire\Home;
+use App\Http\Livewire\Viewmember;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +22,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', Home::class);
+Route::get('/branches', Branches::class)->name('branches');
+Route::get('/branches/{branch_slug}', ViewBranch::class)->name('view_branch');
+
+
+Route::get('/members/{user}', Viewmember::class)->name('view_member');

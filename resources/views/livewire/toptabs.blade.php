@@ -11,9 +11,8 @@
                         </div>
                         <div>
                             <div class="font-weight-bold">
-                                <small class="font-weight-bold d-block mb-1 text-uppercase">Active
-                                    Awards</small>
-                                <span class="font-size-xxl text-success mt-1">345</span>
+                                <small class="font-weight-bold d-block mb-1 text-uppercase">All Members</small>
+                                <span class="font-size-xxl text-success mt-1">{{ $tab_values['members'] }}</span>
                             </div>
                         </div>
                         <div class="ml-auto card-hover-indicator align-self-center">
@@ -34,9 +33,9 @@
                         </div>
                         <div>
                             <div class="font-weight-bold">
-                                <small class="font-weight-bold d-block mb-1 text-uppercase">Votes
-                                    Today(Count)</small>
-                                <span class="font-size-xxl text-first mt-1">76</span>
+                                <small class="font-weight-bold d-block mb-1 text-uppercase">Tithes</small>
+                                <span
+                                    class="font-size-xxl text-first mt-1">{{ $tab_values['tithes_this_month'] }}</span>
                             </div>
                             <!-- <div class="mt-2">
                                                 <i class="fas fa-arrow-up text-success"></i>
@@ -62,9 +61,9 @@
                         </div>
                         <div>
                             <div class="font-weight-bold">
-                                <small class="font-weight-bold d-block mb-1 text-uppercase">Votes
-                                    Today(Amount)</small>
-                                <span class="font-size-xxl text-danger mt-1">GHc 29.4k</span>
+                                <small class="font-weight-bold d-block mb-1 text-uppercase">Offertory</small>
+                                <span
+                                    class="font-size-xxl text-danger mt-1">{{ $tab_values['offertory_this_month'] }}</span>
                             </div>
                         </div>
                         <div class="ml-auto card-hover-indicator align-self-center">
@@ -85,8 +84,8 @@
                         </div>
                         <div>
                             <div class="font-weight-bold">
-                                <small class="font-weight-bold d-block mb-1 text-uppercase">Sales</small>
-                                <span class="font-size-xxl text-warning mt-1">1,268</span>
+                                <small class="font-weight-bold d-block mb-1 text-uppercase">Branches</small>
+                                <span class="font-size-xxl text-warning mt-1">{{ $tab_values['branches'] }}</span>
                             </div>
                         </div>
                         <div class="ml-auto card-hover-indicator align-self-center">
